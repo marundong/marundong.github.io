@@ -96,20 +96,27 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="wellcome">
-<meta property="og:url" content="http://marundong.github.io/index.html">
+  <meta name="description" content="elasticSearch集群搭建 1. 下载elasticsearch官网下载地址https://www.elastic.co/downloads/elasticsearch 选择版本下载，本文下载了当前版本6.6.2，https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.2.tar.gz elastic s">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="elasticSearch集群搭建">
+<meta property="og:url" content="http://marundong.github.io/2019/03/25/1.下载elasticsearch/index.html">
 <meta property="og:site_name" content="wellcome">
+<meta property="og:description" content="elasticSearch集群搭建 1. 下载elasticsearch官网下载地址https://www.elastic.co/downloads/elasticsearch 选择版本下载，本文下载了当前版本6.6.2，https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.2.tar.gz elastic s">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://marundong.github.io/uploads/报错.png">
+<meta property="og:updated_time" content="2019-03-25T14:08:06.269Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wellcome">
+<meta name="twitter:title" content="elasticSearch集群搭建">
+<meta name="twitter:description" content="elasticSearch集群搭建 1. 下载elasticsearch官网下载地址https://www.elastic.co/downloads/elasticsearch 选择版本下载，本文下载了当前版本6.6.2，https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.2.tar.gz elastic s">
+<meta name="twitter:image" content="http://marundong.github.io/uploads/报错.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://marundong.github.io/">
+  <link rel="canonical" href="http://marundong.github.io/2019/03/25/1.下载elasticsearch/">
 
 
 
@@ -119,7 +126,7 @@
   };
 </script>
 
-  <title>wellcome</title>
+  <title>elasticSearch集群搭建 | wellcome</title>
   
 
 
@@ -167,8 +174,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -206,7 +212,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -294,9 +300,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -328,10 +334,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/25/1.下载elasticsearch/" class="post-title-link" itemprop="url">elasticSearch集群搭建</a>
+          <h1 class="post-title" itemprop="name headline">elasticSearch集群搭建
+
               
             
           </h1>
@@ -413,9 +417,7 @@
       
 
       
-        
-          
-            <p>elasticSearch集群搭建</p>
+        <p>elasticSearch集群搭建</p>
 <h2 id="1-下载elasticsearch"><a href="#1-下载elasticsearch" class="headerlink" title="1. 下载elasticsearch"></a>1. 下载elasticsearch</h2><p>官网下载地址<a href="https://www.elastic.co/downloads/elasticsearch" target="_blank" rel="noopener">https://www.elastic.co/downloads/elasticsearch</a></p>
 <p>选择版本下载，本文下载了当前版本6.6.2，<a href="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.2.tar.gz" target="_blank" rel="noopener">https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.2.tar.gz</a></p>
 <p>elastic search不能在root用户下启动，需新建用户。添加es用户，移动elasticsearch-6.6.2到新建用户es目录下。</p>
@@ -444,8 +446,6 @@
 <h3 id="查看集群健康状态"><a href="#查看集群健康状态" class="headerlink" title="查看集群健康状态"></a>查看集群健康状态</h3><p><a href="http://192.168.1.136:9200/_cluster/health?pretty" target="_blank" rel="noopener">http://192.168.1.136:9200/_cluster/health?pretty</a></p>
 <p>返回如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;cluster_name&quot; : &quot;my-application&quot;,</span><br><span class="line">  &quot;status&quot; : &quot;green&quot;,</span><br><span class="line">  &quot;timed_out&quot; : false,</span><br><span class="line">  &quot;number_of_nodes&quot; : 3,</span><br><span class="line">  &quot;number_of_data_nodes&quot; : 3,</span><br><span class="line">  &quot;active_primary_shards&quot; : 0,</span><br><span class="line">  &quot;active_shards&quot; : 0,</span><br><span class="line">  &quot;relocating_shards&quot; : 0,</span><br><span class="line">  &quot;initializing_shards&quot; : 0,</span><br><span class="line">  &quot;unassigned_shards&quot; : 0,</span><br><span class="line">  &quot;delayed_unassigned_shards&quot; : 0,</span><br><span class="line">  &quot;number_of_pending_tasks&quot; : 0,</span><br><span class="line">  &quot;number_of_in_flight_fetch&quot; : 0,</span><br><span class="line">  &quot;task_max_waiting_in_queue_millis&quot; : 0,</span><br><span class="line">  &quot;active_shards_percent_as_number&quot; : 100.0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
       
     </div>
 
@@ -463,194 +463,63 @@
     
 
     
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Ma Rundong</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    
+    <a href="http://marundong.github.io/2019/03/25/1.下载elasticsearch/" title="elasticSearch集群搭建">http://marundong.github.io/2019/03/25/1.下载elasticsearch/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
+</ul>
+
+      </div>
+    
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://marundong.github.io/2019/03/24/愿你成长为自己想要的/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ma Rundong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wellcome">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/24/愿你成长为自己想要的/" class="post-title-link" itemprop="url">愿你成长为自己想要的</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-24 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-24T00:00:00+08:00">2019-03-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-03-25 00:11:37" itemprop="dateModified" datetime="2019-03-25T00:11:37+08:00">2019-03-25</time>
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂谈/" itemprop="url" rel="index"><span itemprop="name">杂谈</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>拖延了大半年，终于开始了写东西。</p>
-<p>因为发现学的东西忘的太快了，没法在当前的工作中使用到的技术在写完demo之后没几天就忘得一干二净了</p>
-<p>平时也有记录笔记的习惯，但都相对零散，现在开始将系统整理在工作和学习当中遇到的每一个问题，希望能坚持下去，将笔记在博客中记录出来，也希望以后学到的每一个知识都可以用项目的形式表现出来。</p>
-<p>以后就每周更新一次，偶尔发点感慨。</p>
-<p>“学而不思则罔 思而不学则殆”，与君共勉</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/24/愿你成长为自己想要的/" rel="next" title="愿你成长为自己想要的">
+                <i class="fa fa-chevron-left"></i> 愿你成长为自己想要的
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -660,14 +529,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -687,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -774,6 +653,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-下载elasticsearch"><span class="nav-number">1.</span> <span class="nav-text">1. 下载elasticsearch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-修改系统参数（重要）"><span class="nav-number">2.</span> <span class="nav-text">2. 修改系统参数（重要）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-集群配置"><span class="nav-number">3.</span> <span class="nav-text">3. 集群配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-启动elasticsearch"><span class="nav-number">4.</span> <span class="nav-text">3. 启动elasticsearch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-测试启动成功"><span class="nav-number">5.</span> <span class="nav-text">4. 测试启动成功</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试节点启动成功"><span class="nav-number">5.1.</span> <span class="nav-text">测试节点启动成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看集群节点"><span class="nav-number">5.2.</span> <span class="nav-text">查看集群节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看集群健康状态"><span class="nav-number">5.3.</span> <span class="nav-text">查看集群健康状态</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -904,6 +800,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -919,6 +819,8 @@
 
   
 
+
+  
 
 
   
